@@ -30,4 +30,15 @@ public class TaskService {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    public ResponseEntity<Task> updateTaskById(Task task, Long id){
+        return taskRepository.findById(id)
+                .map(taskUpdate -> {
+                    taskUpdate.setTitle(task.getTitle());
+                    taskUpdate.setDetails(task.getDetails());
+                    taskUpdate.setDeadLine(task.getDeadLine());
+                    Task updated = taskRepository.save(taskUpdate);
+                    return ResponseEntity.ok().body(updated);
+                }).orElse(ResponseEntity.badRequest().build());
+    }
+
 }
