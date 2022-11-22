@@ -37,8 +37,14 @@ public class TaskController {
 
     @PutMapping("/tasks/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Task> getById(@PathVariable (value = "id") Long id, @RequestBody Task task){
+    public ResponseEntity<Task> updateTaskById(@PathVariable (value = "id") Long id, @RequestBody Task task){
         return taskService.updateTaskById(task, id);
+    }
+
+    @DeleteMapping("/tasks/{id}")
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ResponseEntity<Object> deleteById(@PathVariable (value = "id") Long id){
+        return taskService.deleteBYId(id);
     }
 
 }

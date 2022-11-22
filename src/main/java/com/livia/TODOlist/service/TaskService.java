@@ -41,4 +41,12 @@ public class TaskService {
                 }).orElse(ResponseEntity.badRequest().build());
     }
 
+    public ResponseEntity<Object> deleteBYId (Long id){
+        return taskRepository.findById(id)
+                .map(taskDelete ->{
+                    taskRepository.deleteById(id);
+                return  ResponseEntity.noContent().build();
+                }).orElse(ResponseEntity.badRequest().build());
+    }
+
 }
