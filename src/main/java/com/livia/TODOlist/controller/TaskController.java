@@ -1,4 +1,4 @@
-package controller;
+package com.livia.TODOlist.controller;
 
 import com.livia.TODOlist.model.Task;
 import com.livia.TODOlist.service.TaskService;
