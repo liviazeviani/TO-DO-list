@@ -2,6 +2,7 @@ package com.livia.TODOlist.service;
 
 import com.livia.TODOlist.model.Task;
 import com.livia.TODOlist.repository.TaskRepository;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,9 +12,10 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class TaskService {
 
-    @Autowired
+
     private TaskRepository taskRepository;
 
     public Task createTask (Task task){
