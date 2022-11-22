@@ -11,10 +11,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 @AllArgsConstructor
 public class TaskService {
-
 
     private TaskRepository taskRepository;
 

@@ -15,7 +15,6 @@ import java.util.List;
 @AllArgsConstructor
 public class TaskController {
 
-
     TaskService taskService;
 
     @PostMapping("/tasks")
